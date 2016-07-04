@@ -16,7 +16,10 @@ Base
 ----------------------------*/
 
 body {
-
+	color: #212121;
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -31,6 +34,16 @@ ul, ol {
 
 p {
 
+}
+
+a {
+  color: #ff4081;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: #212121;
 }
 
 /*----------------------------
@@ -72,5 +85,12 @@ News Feed
 
 .news-link {
   color: #3f51b5;
+  display: block;
   font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.news-meta-item {
+	display: inline;
+	margin-right: 15px;
 }
