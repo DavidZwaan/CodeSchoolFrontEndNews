@@ -23,7 +23,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-
+	margin-bottom: 5px;
+	margin-top: 0;
 }
 
 ul, ol {
@@ -66,12 +67,20 @@ Header
 }
 
 /*----------------------------
-container
+Container
 ----------------------------*/
 
 .container {
   max-width: 800px;
   margin: 0 auto;
+}
+
+/*----------------------------
+Content
+----------------------------*/
+
+.content {
+	margin-bottom: 20px;
 }
 
 /*----------------------------
@@ -82,6 +91,12 @@ News Feed
   border-bottom: 1px solid #b6b6b6;
   margin-bottom: 20px;
   padding-bottom: 20px;
+}
+
+.news-item:last-child {
+	border: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .news-link {
@@ -123,6 +138,57 @@ Form
 }
 
 /*----------------------------
+Modal
+----------------------------*/
+
+.modal {
+	position: absolute;
+	left: 50%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	transform: translate(-50%, -5%);
+	background: #fff;
+	width: 500px;
+	top: 40px;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.50);
+	z-index: 2;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.4 ease-in-out;
+}
+
+.modal-media {
+	position: relative;
+}
+
+.modal-media-title {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	color: #fff;
+	font-size: 28px;
+}
+
+.modal-content {
+	padding: 20px;
+}
+
+.modal-overlay {
+	background-color: #212121;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 1;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.4s ease-in-out;
+}
+
+/*----------------------------
 States
 ----------------------------*/
 
@@ -130,11 +196,22 @@ States
 	animation: flash 2s;
 }
 
-.is-visible {
+.form.is-visible {
 	opacity: 1;
 	visibility: visible;
 	height: auto;
 	transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.modal.is-visible {
+	opacity: 1;
+	visibility: visible;
+	transform: translate(-50%, 0%);
+}
+
+.modal-overlay.is-visible {
+	visibility: visible;
+	opacity: 0.4;
 }
 
 /*----------------------------
